@@ -22,7 +22,6 @@ public class LinkedObjects {
            // link.showNext();
         }
         else System.out.println(this.name  + " is not linked to any object");
-
     }
 
 }
