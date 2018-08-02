@@ -1,15 +1,15 @@
 package com.luxoft.oop.mytasks.task_2a;
 
-public class linkedObjects {
+public class LinkedObjects {
 
-    linkedObjects link;
+    LinkedObjects link;
     String name;
 
-    linkedObjects(String name){
+    LinkedObjects(String name){
         this.name = name;
     }
 
-    void linkWithObject(linkedObjects o ){
+    void linkWithObject(LinkedObjects o ){
         link = o;
     }
 
