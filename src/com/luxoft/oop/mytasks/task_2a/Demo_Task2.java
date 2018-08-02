@@ -12,7 +12,7 @@ public class Demo_Task2 {
         o1.link = o2;
         o2.link = o3;
         o3.link = o4;
-        o4.link = o1;
+      //  o4.link = o1;
 
         LinkedObjects currentObject = o1;
         int i = 1;
