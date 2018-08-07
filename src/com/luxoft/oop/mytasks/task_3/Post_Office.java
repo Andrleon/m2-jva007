@@ -5,15 +5,15 @@ import java.util.Arrays;
 public class Post_Office {
     private final int STORAGE = 100;
     private final int HISTORY_SIZE = 100;
+
     private Mail[] letters = new Mail[STORAGE];
     private String[] history = new String[HISTORY_SIZE];
     private int historyPointer = 0;
 
-    void putHystoryRecord(Mail l, String action){
+    private void addHistoryRecord(Mail letter, String action){
         if (historyPointer == HISTORY_SIZE)
             historyPointer = 0;
-
-        history[historyPointer] = l.toString() + " was " + action;
+        history[historyPointer] = letter.toString() + " was " + action;
         historyPointer++;
     }
 
@@ -25,7 +25,7 @@ public class Post_Office {
         for (int i = 0; i < STORAGE; i++ ){
             if (letters[i] == null){
                 letters[i] = letter;
-                putHystoryRecord(letter, "sent");
+                addHistoryRecord(letter, "sent");
                 break;
             }
             else if (i == STORAGE - 1 && letters[i] != null){
@@ -39,7 +39,7 @@ public class Post_Office {
         for (int i = 0; i < STORAGE; i++){
             if (letters[i] != null && letters[i].getAddressee() == addressee){
                 letterToReturn = letters[i];
-                putHystoryRecord(letters[i], "received");
+                addHistoryRecord(letters[i], "received");
                 letters[i] = null;
             }
         }
